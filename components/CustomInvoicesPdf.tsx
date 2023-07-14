@@ -2,7 +2,7 @@
 import InvoicesTabPdf from "./InvoicesTabData";
 import { ButtonWithIcon } from "./ButtonWithIcon";
 import { IoAddOutline } from "react-icons/io5";
-import { InputSelect } from "./inputSelect";
+import { InputSelect } from "./InputSelect";
 import { Dispatch, SetStateAction } from "react";
 import { typeInvoicesData } from "@/app/dashboard/bills/addBills/page";
 import { CalculeTotal } from "./CalculeTotal";

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { InputSelect } from './inputSelect';
+import { InputSelect } from './InputSelect';
 import { InputText } from './InputText';
 import { PropsCustomInvoice } from './CustomInvoicesPdf';
 interface DataType {
