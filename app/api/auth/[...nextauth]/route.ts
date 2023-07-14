@@ -1,25 +1,19 @@
-import NextAuth from "next-auth"
+import NextAuth, { NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
-import { FirestoreAdapter } from "@auth/firebase-adapter";
+import { FirestoreAdapter } from  "@next-auth/firebase-adapter";
 import { cert } from "firebase-admin/app";
+import { AdapterUser } from "next-auth/adapters";
 
 export interface Session {
-  user: {
-    email:string,
-    name: string,
-    image:string,
-    id:string
-  }
+  user:  {
+    name?: string | null | undefined,
+    email?: string | null | undefined,
+    image?: string | null | undefined,
+    id?: string | null | undefined}
 }
 
-type TypeSession ={
-  session:Session ,
-  user:{
-    id:string
-  }
-}
 
-export const authOptions = {
+export const authOptions:NextAuthOptions = {
     providers: [
         GoogleProvider({
             clientId:'202491855529-kvcmmhs76rj4ohfe3nmbm2cnsnrllp02.apps.googleusercontent.com',
@@ -36,7 +30,7 @@ export const authOptions = {
         }),
       }),
       callbacks: {
-        session({ session, user }:TypeSession) {
+        session({ session, user }) {
             if (session.user) {
               session.user.id = user.id;
             }
