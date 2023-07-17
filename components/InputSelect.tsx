@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react"
 
 
 type PropsSelect={
-    options:{ label: string; value: number|string}[]
+    options:{ label?: string; value?: number|string}[] |undefined
     onChangeSelect:any,
     label?:string,
     name:string,

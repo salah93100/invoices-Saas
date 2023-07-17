@@ -5,12 +5,13 @@ import { IoAddOutline } from 'react-icons/io5';
 import { PropsButtonWithIcon } from "./ButtonWithIcon";
 import Link from "next/link";
 import NextLink from 'next/link'
+import { Url } from "next/dist/shared/lib/router/router";
 
 type HeadBarPageProps ={
   tittle:string,
   buttonPrimary:PropsButtonWithIcon,
   buttonSecondary:PropsButtonWithIcon,
-  href?:URL | undefined
+  href:string
 }
 
 

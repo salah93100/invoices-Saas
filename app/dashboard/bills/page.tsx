@@ -8,18 +8,20 @@ import { db } from '../../firebase/config';
 import { useSession } from "next-auth/react";
 
 export type typeInvoicesData={
-  key: string;
-  idInvoices:string,
+  key?: string;
+  idInvoices?:string,
   clientName?:string;
   case?: string;
-  excludingPrice: number;
-  vatRate: number;
-  excludingTotal: number;
-  tags? : string[];
+  excludingPrice?: string;
+  vatRate?: string;
+  excludingTotal?: string;
+  tags?: string[];
   dateEmission?: string;
   dateEcheance?: string;
-  amountTotal:number
-  vatTotal:number
+  amountTotal?:string
+  vatTotal?:string;
+  
+  
 
 }
 

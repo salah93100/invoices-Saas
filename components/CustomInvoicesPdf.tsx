@@ -4,7 +4,7 @@ import { ButtonWithIcon } from "./ButtonWithIcon";
 import { IoAddOutline } from "react-icons/io5";
 import { InputSelect } from "./InputSelect";
 import { Dispatch, SetStateAction } from "react";
-import { typeInvoicesData } from "@/app/dashboard/bills/addBills/page";
+import { typeInvoicesData } from "@/app/dashboard/bills/page";
 import { CalculeTotal } from "./CalculeTotal";
 import { CalculeTotalVTA } from "./CalculeTotal";
 import { useEffect } from "react";
@@ -12,6 +12,7 @@ import { InputText } from "./InputText";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
+
 export type PropsCustomInvoice = {
     handleChange:(e: React.ChangeEvent<HTMLInputElement>) => void,
     invoiceData:typeInvoicesData,
@@ -30,11 +31,11 @@ export const CustomInvoicesPdf = ({handleChange,invoiceData,setInvoiceData}:Prop
 useEffect(() => {
  
    
-    setInvoiceData({...invoiceData, amountTotal:totalTTC,totalVta:totalVta})
+    setInvoiceData({...invoiceData, amountTotal:totalTTC.toString(),vatTotal:totalVta.toString()})
   
  
   return () => {
-    setInvoiceData({...invoiceData, amountTotal:0,totalVta:0})
+    setInvoiceData({...invoiceData, amountTotal:'0',vatTotal:'0'})
   } 
 }, [totalVta,totalTTC])
 
@@ -109,7 +110,7 @@ useEffect(() => {
             options={clientName}
             label="Clients :"
             name="clientName"
-            value={invoiceData?.clientName}
+            value={invoiceData?.clientName as string}
             onChangeSelect={handleChange}
 
             />
@@ -119,7 +120,7 @@ useEffect(() => {
         </div>
         <hr className="my-4 bg-secondary-600 " />
         <div className="flex flex-col">
-        <InvoicesTabPdf handleChange={handleChange} invoiceData={invoiceData} />
+        <InvoicesTabPdf handleChange={handleChange} invoiceData={invoiceData} setInvoiceData={setInvoiceData}/>
     <div className="flex justify-end my-2">
       
         <ButtonWithIcon
@@ -178,7 +179,7 @@ useEffect(() => {
               </td>
               <td>
                 <div>
-                  {invoiceData.totalVta}
+                  {invoiceData.vatTotal}
                 </div>
               </td>
             </tr>

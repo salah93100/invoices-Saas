@@ -82,7 +82,7 @@ export default function AddClient(){
       <InputText 
     name={'nameClient'} 
     handleChange={handleChange}
-    value={clientData?.nameClient}
+    value={clientData?.nameClient  as string}
     placeHolder={'Nom ou raison'}
     label={'Raison sociale'}
     />
@@ -93,14 +93,14 @@ export default function AddClient(){
      <InputText 
     name={'siren'} 
     handleChange={handleChange}
-    value={clientData?.siren}
+    value={clientData?.siren as string}
     placeHolder={'Numéro de Sireb'}
     label={'Siren'}
     />
     <InputText 
     name={'nameClient'} 
     handleChange={handleChange}
-    value={clientData?.nameClient}
+    value={clientData?.nameClient  as string}
     placeHolder={'déstinataire'}
     label={'Destinataire'}
     />
@@ -109,14 +109,14 @@ export default function AddClient(){
      <InputText 
     name={'vtaNumber'} 
     handleChange={handleChange}
-    value={clientData?.vtaNumber}
+    value={clientData?.vtaNumber  as string} 
     placeHolder={'numéro de TVA...'}
     label={'Numéro de TVA'}
     />
     <InputText 
     name={'telNumber'} 
     handleChange={handleChange}
-    value={clientData?.telNumber}
+    value={clientData?.telNumber  as string}  
     placeHolder={'ex: +33 6 51 ...'}
     label={'Téléphone'}
     />
@@ -126,7 +126,7 @@ export default function AddClient(){
      <InputText 
     name={'addressClient'} 
     handleChange={handleChange}
-    value={clientData?.addressClient}
+    value={clientData?.addressClient  as string}
     placeHolder={'Adresse du client'}
     label={'Adresse'}
     />
@@ -135,7 +135,7 @@ export default function AddClient(){
      <InputText 
     name={'email'} 
     handleChange={handleChange}
-    value={clientData?.email}
+    value={clientData?.email  as string}
     placeHolder={'ex: test@gmail.com..'}
     label={'Email'}
     />
@@ -144,7 +144,7 @@ export default function AddClient(){
      <InputText 
     name={'note'} 
     handleChange={handleChange}
-    value={clientData?.note}
+    value={clientData?.note  as string}
     placeHolder={'Note importante sur le client...'}
     label={'Remarques'}
     />
@@ -159,7 +159,7 @@ export default function AddClient(){
      <InputText 
     name={'numberIBAN'} 
     handleChange={handleChange}
-    value={clientData?.numberIBAN}
+    value={clientData?.numberIBAN  as string}
     placeHolder={'Iban...'}
     label={'IBAN sur lequel je souhaite être payé'}
     />
@@ -171,7 +171,7 @@ export default function AddClient(){
      <InputText 
     name={'numberBIC'} 
     handleChange={handleChange}
-    value={clientData?.numberBIC}
+    value={clientData?.numberBIC  as string}
     placeHolder={'BIC...'}
     label={'BIC sur lequel je souhaite être payé'}
     />
@@ -183,7 +183,7 @@ export default function AddClient(){
      <InputText 
     name={'nameBank'} 
     handleChange={handleChange}
-    value={clientData?.nameBank}
+    value={clientData?.nameBank  as string}
     placeHolder={'Nom de la banque'}
     label={'Nom de la banque sur laquelle je souhaite être payé'}
     />

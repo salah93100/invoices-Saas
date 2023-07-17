@@ -20,7 +20,7 @@ import { typeInvoicesData } from '@/app/dashboard/bills/page';
         <>
         
           { 
-          tags.map((tag) => {
+          tags &&tags.map((tag) => {
 
            
             

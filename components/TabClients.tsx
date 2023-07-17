@@ -5,25 +5,25 @@ import type { ColumnsType } from 'antd/es/table';
 
 export type DataClientType ={
     key?: string;
-    nameClient?: string;
+    nameClient?: string | undefined,
     email?: string;
     numberBills?:string,
     amount?:string|number,
     siren?:string,
     vtaNumber?:string,
     telNumber?:string,
-    addressClient:string,
-    note:string,
-    typeClient:string
-    numberIBAN:string,
-    numberBIC:string,
-    nameBank:string
+    addressClient?:string,
+    note?:string,
+    typeClient?:string
+    numberIBAN?:string,
+    numberBIC?:string,
+    nameBank?:string
 
    
   }
 
    type PropsClientTab={
-    dataClient:DataClientType[] | undefined
+    dataClient?: DataClientType[] | undefined
   }
 
 

@@ -25,7 +25,7 @@ const data: DataType[] = [
   }
 ];
 
-const InvoicesTabData = ({handleChange,invoiceData}:PropsCustomInvoice) => 
+const InvoicesTabData = ({handleChange,invoiceData,setInvoiceData}:PropsCustomInvoice) => 
 {
 
 const columns: ColumnsType<DataType> = [
@@ -36,7 +36,7 @@ const columns: ColumnsType<DataType> = [
     render: (text,record) => <InputSelect 
     options={[{value:'Mme sarfati',label:'Mme sarfati'},{value:'Dupont',label:'Mr Dupont'}]}
     name="clientName"
-    value={invoiceData?.clientName}
+    value={invoiceData.clientName as string}
     onChangeSelect={handleChange}
 
     />,
@@ -46,8 +46,8 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'excludingPrice',
     render: (text) => <InputText 
     name={'excludingPrice'} 
-    handleChange={handleChange}
-    value={invoiceData?.excludingPrice}
+    handleChange={handleChange }
+    value={invoiceData.excludingPrice as string}
     placeHolder={text}
     />
     
@@ -60,7 +60,7 @@ const columns: ColumnsType<DataType> = [
     render: (text) => <InputSelect 
     options={[{value:0.1,label:'10%'},{value:0.2,label:'20%'}]}
     name="vatRate"
-    value={invoiceData?.vatRate}
+    value={invoiceData.vatRate as string}
     onChangeSelect={handleChange}
 
     />,
@@ -72,7 +72,7 @@ const columns: ColumnsType<DataType> = [
     render: (text) =><InputText 
     name={'excludingTotal'} 
     handleChange={handleChange}
-    value={invoiceData?.excludingTotal}
+    value={invoiceData.excludingTotal as string}
     placeHolder={text}
     />,
 

@@ -8,16 +8,18 @@ type Props ={
 
 export const UserProfile =  ({srcPath}:Props) => {
   const session= useSession()
+  const imageSession=session?.data?.user?.image
+  
   return (
     <div className='w-64 px-4 pb-4 flex flex-col gap-4 mt-4'>
     <div className='reative h-36 flex justify-center items-center  rounded-full'>
     <Image 
-
-      src={session?.data?.user?.image}  
+      src={imageSession as string}  
       width={80}
       height={80}
       alt="Picture of your account"
-      className='rounded-full'/>
+      className='rounded-full'
+    />
       </div>
 
     <div className='text-center'>

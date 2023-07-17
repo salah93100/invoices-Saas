@@ -158,10 +158,10 @@ export default function addInvoices() {
   const [invoiceModal,setInvoiceModal]=useState<boolean>(false)
   const [invoiceData,setInvoiceData]=useState<typeInvoicesData>({
     key:'Fa',
-    excludingPrice: 0,
+    excludingPrice: '0',
     idInvoices:'00',
-    excludingTotal:0,
-    vatRate:0,
+    excludingTotal:'0',
+    vatRate:'0',
     tags:['Enregistrer']
 })
   
@@ -193,7 +193,7 @@ export default function addInvoices() {
 <div className="flex flex-row">
          <CustomInvoicesPdf  handleChange={handleChange} invoiceData={invoiceData} setInvoiceData={setInvoiceData} />
        <div className="flex-col flex mt-4">
-  <PDFDownloadLink document={<DocumentInvoices handleChange={handleChange} invoiceData={invoiceData}/>}  fileName={`${invoiceData.idInvoices}.pdf`}>
+  <PDFDownloadLink document={<DocumentInvoices handleChange={handleChange} invoiceData={invoiceData} setInvoiceData={setInvoiceData}/>}  fileName={`${invoiceData.idInvoices}.pdf`}>
   {({ blob, url, loading, error }) =>
                     loading ? "Report loading..." : <ButtonWithIcon buttonText={'Telecharger'} Icon={IoAddOutline} buttonTheme={'Primary'} />
 
@@ -204,7 +204,7 @@ export default function addInvoices() {
   {invoiceModal?( <div className="fixed h-screen bg-black bg-opacity-25 w-full top-0  left-0 right-0 backdrop-blur-sm flex justify-center items-center" onClick={()=>setInvoiceModal(false)}>
         <PDFViewer width={"600px"} height="90%">
         
-        <DocumentInvoices handleChange={handleChange} invoiceData={invoiceData} />
+        <DocumentInvoices handleChange={handleChange} invoiceData={invoiceData} setInvoiceData={setInvoiceData}/>
    
   </PDFViewer>
   </div>):""}
