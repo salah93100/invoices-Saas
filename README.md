@@ -1,3 +1,5 @@
+"Invoice SaaS is a solution for law firms to facilitate the management of their practice."
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
